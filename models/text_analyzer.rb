@@ -1,11 +1,11 @@
-#class TextAnalyzer
-class Piglatinizer
+# Your TextAnalyzer model code will go here.
+
+class TextAnalyzer
   attr_reader :text
  
-  #def initialize(text)
- # def initialize
- #   @text = text.downcase
- # end
+  def initialize(text)
+    @text = text.downcase
+  end
   
   def piglatinizer
     a = text.split(" ")
@@ -29,6 +29,10 @@ class Piglatinizer
       "#{word[consonants.length..-1] + consonants.join + "ay"}"
     end
   end
+  
+  def original_text
+    @original_text = @text
+  end 
  
   def count_of_words
     words = text.split(" ")
